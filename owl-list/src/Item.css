@@ -4,10 +4,15 @@
   width: inherit;
   padding: 15px 10px;
   background-color: #F8F8F8;
+  cursor: grab;
 }
 
 .item-container.alternate {
   background-color: #D3D3D3;
+}
+
+.item-container:active {
+  cursor: grabbing;
 }
 
 .item-delete-button {

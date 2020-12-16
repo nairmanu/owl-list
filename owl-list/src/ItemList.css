@@ -1,7 +1,8 @@
 .item-list-container {
  position: relative;
- height: calc(100% - 120px);
- margin: 30px 10px;
+ height: calc(100% - 140px);
+ margin: 20px 5px;
+ padding: 5px 10px;
 }
 
 .item-list-content {

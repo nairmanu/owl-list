@@ -18,7 +18,7 @@ const ItemList: React.FC<ItemListProps> = ({ items, onDeleteClick, swapItems }) 
 
   React.useEffect(() => {
     scrollToBottom();
-  }, [items, bottomRef]);
+  }, [items.length, bottomRef]);
 
   const scrollToBottom = () => {
     if (bottomRef !== null && bottomRef.current !== null) {
