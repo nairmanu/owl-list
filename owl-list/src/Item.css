@@ -1,7 +1,6 @@
 .item-container {
   display: flex;
   justify-content: space-between;
-  width: inherit;
   padding: 15px 10px;
   background-color: #F8F8F8;
   cursor: grab;

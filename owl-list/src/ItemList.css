@@ -19,3 +19,15 @@
   border: 1px solid #009900;
   color: #fff;
 }
+
+.item {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(100% - 20px);
+}
+
+.bottom-ref-div {
+  position: absolute;
+  bottom: 0;
+}
