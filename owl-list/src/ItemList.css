@@ -1,0 +1,20 @@
+.item-list-container {
+ position: relative;
+ height: calc(100% - 120px);
+ margin: 30px 10px;
+}
+
+.item-list-content {
+  overflow-y: scroll;
+  height: 100%;
+}
+
+.scroll-bottom-button {
+  border-radius: 35px;
+  padding: 15px;
+  position: absolute;
+  bottom: 10px;
+  background-color: #009900;
+  border: 1px solid #009900;
+  color: #fff;
+}
