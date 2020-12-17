@@ -1,6 +1,7 @@
 import * as React from "react";
+import Draggable from "../utils/drag-drop/Draggable";
 
-import "./Item.css";
+import "./Item.scss";
 
 interface ItemProps {
   text: string;
@@ -14,14 +15,14 @@ interface ItemProps {
 
 const Item: React.FC<ItemProps> = ({ text, isAlt, index, onDeleteClick, onDragStart, onDragEnter, onDragEnd }) => {
   return (
-    <div draggable
+    <Draggable
       onDragStart={() => onDragStart(index)}
       onDragEnter={() => onDragEnter(index)}
       onDragEnd={onDragEnd}
       className={`item-container${isAlt ? " alternate" : ""}`}>
       <div className="item-text">{text}</div>
       <button className="item-delete-button" onClick={() => onDeleteClick(index)}>Delete</button>
-    </div>
+    </Draggable>
   );
 };
 

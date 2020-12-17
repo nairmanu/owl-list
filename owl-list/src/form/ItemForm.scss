@@ -1,0 +1,30 @@
+@import "../styles/themes.scss";
+
+.item-form-container {
+  margin: 30px 20px;
+  display: flex;
+  position: relative;
+
+  .form-buttons {
+    margin-left: 5px;
+    padding: 10px 15px;
+    border: 1px solid;
+    border-radius: 8px;
+    font-size: 1rem;
+  }
+  
+  .form-input {
+    border-radius: 8px;
+    border: 1px solid;
+    padding: 5px;
+    font-size: 1rem;
+  }
+
+  @include themify($themes) {
+    .form-buttons {
+      background-color: themed('button.primary.background');
+      border-color: themed('button.primary.border');
+      color: themed('button.primary.text');
+    }
+  }
+}

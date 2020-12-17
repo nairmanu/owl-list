@@ -1,0 +1,37 @@
+@import "../styles/themes.scss";
+
+.item-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 10px;
+  cursor: grab;
+
+  &:active {
+    cursor: grabbing;
+  }
+
+  .item-delete-button {
+    height: 44px;
+    border: 1px solid;
+    border-radius: 6px;
+    padding: 5px 15px;
+    font-size: 1rem;
+    font-weight: bold;
+    margin-left: 10px;
+  }
+
+  @include themify($themes) {
+    background-color: themed('list.background.odd');
+
+    &.alternate {
+      background-color: themed('list.background.even');
+    }
+
+    .item-delete-button {
+      background-color: themed('button.delete.background');
+      border-color: themed('button.delete.border');
+      color: themed('button.delete.text');
+    }
+  }
+}
+

@@ -1,8 +1,8 @@
 import React from 'react';
-import ItemForm from "./ItemForm";
-import ItemList from "./ItemList";
+import ItemForm from "./form/ItemForm";
+import ItemList from "./list/ItemList";
 
-import './App.css';
+import './App.scss';
 
 function App() {
 
@@ -38,13 +38,13 @@ function App() {
     persistItems([]);
   }
 
-  const swapItems = (fromIndex: number, toIndex: number) => {
-    const rearrangedList = Array.from(items);
+  const reorderItem = (fromIndex: number, toIndex: number) => {
+    const reOrderedList = Array.from(items);
 
-    const [item] = rearrangedList.splice(fromIndex, 1);
-    rearrangedList.splice(toIndex, 0, item);
+    const [item] = reOrderedList.splice(fromIndex, 1);
+    reOrderedList.splice(toIndex, 0, item);
 
-    persistItems(rearrangedList);
+    persistItems(reOrderedList);
   };
 
   const onDeleteClick = (index: number) => {
@@ -59,7 +59,7 @@ function App() {
   return (
     <div className="App">
       <ItemForm onGenerateClick={onGenerate} onResetClick={onResetClick} />
-      <ItemList items={items} onDeleteClick={onDeleteClick} swapItems={swapItems} />
+      <ItemList items={items} onDeleteClick={onDeleteClick} reorderItem={reorderItem} />
     </div>
   );
 }

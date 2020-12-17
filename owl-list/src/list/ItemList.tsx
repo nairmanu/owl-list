@@ -2,15 +2,15 @@ import * as React from "react";
 import { useVirtual } from "react-virtual";
 import Item from "./Item";
 
-import "./ItemList.css";
+import "./ItemList.scss";
 
 interface ItemListProps {
   items: string[];
   onDeleteClick: (index: number) => void;
-  swapItems: (fromIndex: number, toIndex: number) => void;
+  reorderItem: (fromIndex: number, toIndex: number) => void;
 }
 
-const ItemList: React.FC<ItemListProps> = ({ items, onDeleteClick, swapItems }) => {
+const ItemList: React.FC<ItemListProps> = ({ items, onDeleteClick, reorderItem }) => {
 
   const bottomRef = React.useRef<HTMLDivElement>(null);
   const [fromIndex, setFromIndex] = React.useState<number>(0);
@@ -54,7 +54,7 @@ const ItemList: React.FC<ItemListProps> = ({ items, onDeleteClick, swapItems }) 
     }, [items.length]);
 
     const onDragEnd = () => {
-      swapItems(fromIndex, toIndex);
+      reorderItem(fromIndex, toIndex);
       // Once this PR (https://github.com/tannerlinsley/react-virtual/pull/55/files), we can recalculate the
       // height of rows after they are reordered.
     };

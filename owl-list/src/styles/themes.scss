@@ -1,0 +1,42 @@
+
+$red-1: #ff0000;
+$red-2: #ff4d4d;
+$white: #ffffff;
+$gray-1: #D3D3D3;
+$gray-2: #F8F8F8;
+$green: #009900;
+
+
+$themes: (
+  light: (
+    'button.delete.background': $red-1,
+    'button.delete.border': $red-1,
+    'button.delete.text': $white,
+    'list.background.even': $gray-1,
+    'list.background.odd': $gray-2,
+    'button.scroll.background': $green,
+    'button.scroll.border': $green,
+    'button.scroll.text': $white,
+    'button.primary.background': $red-2,
+    'button.primary.border': $red-2,
+    'button.primary.text': $white,
+  ),
+);
+
+@mixin themify($themes) {
+    @each $theme, $map in $themes {
+      .theme-#{$theme} & {
+        $theme-map: () !global;
+        @each $key, $submap in $map {
+          $value: map-get(map-get($themes, $theme), '#{$key}');
+          $theme-map: map-merge($theme-map, ($key: $value)) !global;
+        }
+        @content;
+        $theme-map: null !global;
+      }
+    }
+  }
+  
+  @function themed($key) {
+    @return map-get($theme-map, $key);
+  }

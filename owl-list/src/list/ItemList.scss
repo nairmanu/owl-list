@@ -1,0 +1,41 @@
+@import "../styles/themes.scss";
+
+.item-list-container {
+  position: relative;
+  height: calc(100% - 140px);
+  margin: 20px 5px;
+  padding: 5px 10px;
+
+  .item-list-content {
+    overflow-y: scroll;
+    height: 100%;
+  }
+
+  .scroll-bottom-button {
+    border-radius: 35px;
+    padding: 15px;
+    position: absolute;
+    bottom: 10px;
+    border: 1px solid;
+  }
+
+  .item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: calc(100% - 20px);
+  }
+
+  .bottom-ref-div {
+    position: absolute;
+    bottom: 0;
+  }
+
+  @include themify($themes) {
+    .scroll-bottom-button {
+      background-color: themed('button.scroll.background');
+      color: themed('button.scroll.text');
+      border-color: themed('button.scroll.border');
+    }
+  }
+}

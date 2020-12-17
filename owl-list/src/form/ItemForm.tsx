@@ -1,5 +1,5 @@
 import * as React from "react";
-import "./ItemForm.css";
+import "./ItemForm.scss";
 
 interface ItemFormProps {
   onGenerateClick: (count: number) => void;
